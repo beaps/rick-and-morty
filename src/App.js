@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import { CardList } from './components/CardList'
+import { CardList } from './components/CardList';
+import { SearchBox } from './components/SearchBox';
+
 import './App.css';
 
 function App() {
   const [monsters, setMonsters] = useState([]);
+  const [searchField, setSearchField] = useState('');
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -12,9 +15,17 @@ function App() {
       .then(users => setMonsters(users));
   }, []);
 
+  const filteredMonsters = monsters.filter(monster => 
+    monster.name.toLowerCase().includes(searchField.toLowerCase())
+  );
+
   return (
     <div className='App'>
-      <CardList monsters={monsters}></CardList>
+      <SearchBox
+        placeholder='search monsters'
+        handleChange={e => setSearchField(e.target.value)}
+      />
+      <CardList monsters={filteredMonsters}></CardList>
     </div>
   );
 }
