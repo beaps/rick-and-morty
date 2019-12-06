@@ -6,7 +6,8 @@ import './styles.css';
 
 export const CardList = props => (
   <div className='card-list'>
-    {props.monsters.map(monster => (
-      <Card key={monster.id} monster={monster} />
+    {console.log(props.characters)}
+    {props.characters.map(character => (
+      <Card key={character.id} character={character} />
     ))}
   </div>);

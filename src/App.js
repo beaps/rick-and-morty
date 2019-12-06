@@ -6,17 +6,17 @@ import { SearchBox } from './components/SearchBox';
 import './App.css';
 
 function App() {
-  const [monsters, setMonsters] = useState([]);
+  const [characters, setCharacters] = useState([]);
   const [searchField, setSearchField] = useState('');
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://rickandmortyapi.com/api/character/')
       .then(res => res.json())
-      .then(users => setMonsters(users));
+      .then(data => setCharacters(data.results));
   }, []);
 
-  const filteredMonsters = monsters.filter(monster => 
-    monster.name.toLowerCase().includes(searchField.toLowerCase())
+  const filteredCharacters = characters.filter(character => 
+    character.name.toLowerCase().includes(searchField.toLowerCase())
   );
 
   const handleChange = e => setSearchField(e.target.value);
@@ -24,10 +24,10 @@ function App() {
   return (
     <div className='App'>
       <SearchBox
-        placeholder='search monsters'
+        placeholder='search characters'
         handleChange={handleChange}
       />
-      <CardList monsters={filteredMonsters}></CardList>
+      <CardList characters={filteredCharacters}></CardList>
     </div>
   );
 }
