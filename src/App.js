@@ -24,7 +24,7 @@ function App() {
   return (
     <div className='App'>
       <SearchBox
-        placeholder='search characters'
+        placeholder='Search characters'
         handleChange={handleChange}
       />
       <CardList characters={filteredCharacters}></CardList>
