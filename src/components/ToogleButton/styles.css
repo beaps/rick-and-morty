@@ -1,0 +1,47 @@
+.toogle-container {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.toogle__label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 47px;
+  height: 23px;
+	background: var(--main-title);
+	float: right;
+	border-radius: 100px;
+	position: relative;
+}
+
+.toogle__label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 17px;
+  height: 17px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + .toogle__label {
+	background: #873CFF;
+}
+
+input:checked + .toogle__label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+.toogle__label:active:after {
+	width: 40px;
+}

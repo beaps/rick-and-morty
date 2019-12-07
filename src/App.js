@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 import { CardList } from './components/CardList';
 import { SearchBox } from './components/SearchBox';
+import { ToogleButton } from './components/ToogleButton';
 
 import './App.css';
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [searchField, setSearchField] = useState('');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character/')
@@ -15,14 +17,16 @@ function App() {
       .then(data => setCharacters(data.results));
   }, []);
 
-  const filteredCharacters = characters.filter(character => 
+  const handleChange = e => setSearchField(e.target.value);
+  const handleTheme = e => e.target.checked ? setTheme('dark') : setTheme('light');
+
+  const filteredCharacters = characters.filter(character =>
     character.name.toLowerCase().includes(searchField.toLowerCase())
   );
 
-  const handleChange = e => setSearchField(e.target.value);
-
   return (
-    <div className='App'>
+    <div className='App' data-theme={theme}>
+      <ToogleButton handleTheme={handleTheme} />
       <header>
         <h1>Rick <span>and</span> Morty</h1>
       </header>

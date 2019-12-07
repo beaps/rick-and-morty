@@ -6,7 +6,7 @@
 
 .searchBox__icon-container {
   align-items: center;
-  background-color: #F1F3FA;
+  background-color: var(--bg-searchBox-icon);
   border-radius: 3px 0 0 3px;
   display: flex;
   height: 40px;
@@ -19,6 +19,7 @@
 }
 
 .searchBox__input {
+  background-color: var(--bg-card);
   border-radius: 0 3px 3px 0;
   border: none;
   font-size: 0.9rem;
@@ -31,5 +32,9 @@
 
 .searchBox__input:hover,
 .searchBox__input:focus {
-  color: #873CFF;
+  color: var(--color-text-searchBox);
+}
+
+.searchBox__input::placeholder {
+  color: var(--color-text);
 }
