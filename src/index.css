@@ -5,9 +5,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg-violet: #873cff;
+  --bg-blue: #00e0ff;
+  --bg-card: #fcfcfc;
+  --bg-searchBox-icon: #f1f3fa;
+  --main-title: #09d3ac;
+  --color-text: #333;
+  --color-text-searchBox: var(--bg-violet);
+  background: linear-gradient(var(--bg-violet), var(--bg-blue));
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app[data-theme="dark"] {
+  --bg-violet: #333;
+  --bg-blue: #333;
+  --bg-card: #434343;
+  --bg-searchBox-icon: var(--bg-card);
+  --main-title: #0bad8d;
+  --color-text: #b5b5b5;
+  --color-text-searchBox: var(--color-text);
+  background: linear-gradient(var(--bg-violet), var(--bg-blue));
 }

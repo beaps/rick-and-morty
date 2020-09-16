@@ -1,39 +1,7 @@
 .home {
-  background: linear-gradient(var(--bg-violet), var(--bg-blue));
   color: var(--color-text);
   min-height: 100vh;
   padding-bottom: 3rem;
   text-align: center;
   transition: all 0.3s ease-in;
-
-  --bg-violet: #873cff;
-  --bg-blue: #00e0ff;
-  --bg-card: #fcfcfc;
-  --bg-searchBox-icon: #f1f3fa;
-  --main-title: #09d3ac;
-  --color-text: #333;
-  --color-text-searchBox: var(--bg-violet);
-}
-
-.home[data-theme="dark"] {
-  --bg-violet: #333;
-  --bg-blue: #333;
-  --bg-card: #434343;
-  --bg-searchBox-icon: var(--bg-card);
-  --main-title: #0bad8d;
-  --color-text: #b5b5b5;
-  --color-text-searchBox: var(--color-text);
-}
-
-.home h1 {
-  color: var(--main-title);
-  font-family: "Rock Salt", cursive;
-  font-size: 2.5rem;
-  margin: 0;
-  padding-top: 2rem;
-}
-
-.home h1 span {
-  padding-left: 0.6rem;
-  font-size: 1.5rem;
 }
