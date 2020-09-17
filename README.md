@@ -1,6 +1,6 @@
 # Rick and Morty 🧪
 
-➡️ [See the web](https://beaps.github.io/rick-and-morty/)
+➡️ [See the web](https://objective-franklin-665e6f.netlify.app/)
 
 - React (Hooks)
 - CSS Grid (Responsive website without media queries)
